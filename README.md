@@ -3,6 +3,9 @@ suivi du tuto : https://github.com/bezkoder/angular-17-jwt-auth/tree/master
 API à corriger avec
 https://www.bezkoder.com/spring-boot-security-login-jwt/
 
+interface angular enregistrée sur https://github.com/Virginie16/angular-jwt-auth.git
+API enregistrée sur https://github.com/Virginie16/apiSecuris-eTokenCookie.git
+
 # AngularJwtAuth
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.7.
