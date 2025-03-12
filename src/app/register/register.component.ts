@@ -14,6 +14,7 @@ export class RegisterComponent {
     username: null,
     email: null,
     password: null,
+    role: 'user',
   };
   isSuccessful = false;
   isSignUpFailed = false;
@@ -22,15 +23,16 @@ export class RegisterComponent {
   constructor(private authService: AuthService) {}
 
   onSubmit(): void {
-    const { username, password } = this.form;
+    const { username, email, password, role } = this.form;
 
-    this.authService.register(username, password).subscribe({
+    this.authService.register(username, email, password, [role]).subscribe({
       next: (data) => {
         console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
       },
       error: (err) => {
+        console.log(err);
         this.errorMessage = err.error.message;
         this.isSignUpFailed = true;
       },
