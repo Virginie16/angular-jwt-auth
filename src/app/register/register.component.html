@@ -15,9 +15,10 @@
         <div class="form-group">
           <label for="username">Username</label>
           <input
+            id="username"
             type="text"
             class="form-control"
-            name="username"
+            name="usernames"
             [(ngModel)]="form.username"
             required
             minlength="3"
@@ -42,9 +43,10 @@
         <div class="form-group">
           <label for="email">Email</label>
           <input
+            id="email"
             type="email"
             class="form-control"
-            name="email"
+            name="emails"
             [(ngModel)]="form.email"
             required
             email
@@ -65,9 +67,10 @@
         <div class="form-group">
           <label for="password">Password</label>
           <input
+            id="password"
             type="password"
             class="form-control"
-            name="password"
+            name="passwords"
             [(ngModel)]="form.password"
             required
             minlength="6"
@@ -87,7 +90,12 @@
         </div>
         <div class="form-group">
           <label for="role">Role</label>
-          <select class="form-control" name="role" [(ngModel)]="form.role">
+          <select
+            id="role"
+            class="form-control"
+            name="roles"
+            [(ngModel)]="form.role"
+          >
             <option value="user">User</option>
             <option value="admin">Admin</option>
           </select>

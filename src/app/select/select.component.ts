@@ -1,19 +1,16 @@
-import { ValideService } from './../_services/valide.service';
-
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ValideService } from '../_services/valide.service';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-//const API_URL = 'http://localhost:8080/api/select/';
-
 @Component({
-  selector: 'app-board-admin',
+  selector: 'app-select',
   imports: [FormsModule, CommonModule],
-  templateUrl: './board-admin.component.html',
-  styleUrl: './board-admin.component.css',
+  templateUrl: './select.component.html',
+  styleUrl: './select.component.css',
 })
-export class BoardAdminComponent implements OnInit {
+export class SelectComponent implements OnInit {
   produits: string[] = [];
   sites: string[] = [];
   selectedProduit = '';
@@ -60,7 +57,8 @@ export class BoardAdminComponent implements OnInit {
       this.errorMessage = 'Veuillez sélectionner un site et un produit.';
       return;
     }
-    this.router.navigate([`${action}`], {
+
+    this.router.navigate([`/${action}`], {
       queryParams: { site: this.selectedSite, produit: this.selectedProduit },
     });
   }
