@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { BoardAdminComponent } from './board-admin.component';
 
 describe('BoardAdminComponent', () => {
@@ -8,9 +9,12 @@ describe('BoardAdminComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BoardAdminComponent]
-    })
-    .compileComponents();
+      imports: [BoardAdminComponent],
+      providers: [
+        provideHttpClient(), // Provide the HttpClient along with HttpClientTesting
+        provideHttpClientTesting(),
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(BoardAdminComponent);
     component = fixture.componentInstance;
